@@ -21,10 +21,10 @@ class MyApp extends StatelessWidget {
           body: Center(
             child: Column(
               children: [
-                ContactCard(name :'Ozumaki Naruto',email :'IwillBeHockage@gmail.com',phone :'0123456789',url: 'https://findicons.com/files/icons/1275/naruto_vol_1/256/uzumaki_naruto.png',),
-                ContactCard(name :'Potetial Husband',email: 'needWife@gmail.com',phone: '01666666666',url: 'https://st3.depositphotos.com/4177785/31725/v/1600/depositphotos_317251056-stock-illustration-date-rape-linear-icon-women.jpg',),
-                ContactCard(name: 'Juzo',email: 'GhoulSlayer@gmail.com',phone: '01999999999',url: 'https://i.pinimg.com/originals/76/c3/5d/76c35de9fb01e4144370249c81126468.jpg',),
-                ContactCard(name: 'ZeroTwo',email: '02@gmail.com',phone: '02020202020',url: 'https://pbs.twimg.com/media/DVqWTRlXUAAUMdu.jpg',),
+                ContactCard(name :'Ozumaki Naruto',email :'IwillBeHockage@gmail.com',phone :'0123456789',url: 'https://findicons.com/files/icons/1275/naruto_vol_1/256/uzumaki_naruto.png',isBoss: '7th Hockage',),
+                ContactCard(name :'Uchiha Itachi',email: 'UchihaSlayer@gmail.com',phone: '01666666666',url: 'https://icon-library.com/images/2018/2289266_itachi-anime-hd-png-download.png',isBoss: 'Big Boss',),
+                ContactCard(name: 'Juzo',email: 'GhoulSlayer@gmail.com',phone: '01999999999',url: 'https://i.pinimg.com/originals/76/c3/5d/76c35de9fb01e4144370249c81126468.jpg',isBoss: 'Boss',),
+                ContactCard(name: 'ZeroTwo',email: '02@gmail.com',phone: '02020202020',url: 'https://pbs.twimg.com/media/DVqWTRlXUAAUMdu.jpg',isBoss: 'Boss wifu',),
 
               ],
             ),
@@ -36,8 +36,9 @@ class MyApp extends StatelessWidget {
 }
 
 class ContactCard extends StatelessWidget {
-  String name, phone, email,url;
-  ContactCard({this.name,this.email,this.phone,this.url});
+  String name, phone, email,url,isBoss;
+
+  ContactCard({this.name,this.email,this.phone,this.url,this.isBoss});
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +77,7 @@ class ContactCard extends StatelessWidget {
                     Icon(Icons.mail,color: Colors.white,),
 
                     Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
+                      padding: const EdgeInsets.only(left: 15.0,),
                       child: Text(
                           this.email,
                           style: TextStyle(fontSize: 15.0),
@@ -101,16 +102,35 @@ class ContactCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0),
                   child: Row(
+
                     children: [
+
                       Icon(CupertinoIcons.heart_fill,color: Colors.red,),
                       Icon(CupertinoIcons.heart_fill,color: Colors.red,),
                       Icon(CupertinoIcons.heart_fill,color: Colors.red,),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+
+
+                      ),
                       Icon(CupertinoIcons.tag,),
+                      Column(
+                        children: [
+                          Text(
+
+                            this.isBoss,),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+
+                      ),
                       Icon(CupertinoIcons.delete,),
                       //Icon(Icons.delete,),
 
                       Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
+
+                        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 0.0),
 
                       ),
                     ],
